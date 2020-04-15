@@ -1,17 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="hello">
+
+    <input type="text" v-model=url />
+
+    <div class="container justify-content-center align-content-center">
+      <h1>first qr</h1>
+      <QrCode :url=url />
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import QrCode from './components/QrCode';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    QrCode
+  },
+  data() {
+    return {
+      url: ''
+    }
   }
 }
 </script>
